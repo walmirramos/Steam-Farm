@@ -9,4 +9,4 @@ if ($RuntimeDirectory) {
         Copy-Item -LiteralPath (Join-Path $RuntimeDirectory $name) -Destination $destination -Force
     }
 }
-Write-Host "Executável: $destination\BDKSteamHourFarm.exe"
+Write-Host "Executável: $destination\SteamHoraFarmada.exe"

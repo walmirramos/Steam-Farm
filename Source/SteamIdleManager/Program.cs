@@ -13,7 +13,7 @@ namespace SteamIdleManager
             // Limpa o log anterior (opcional - pode comentar para manter histórico)
             // Logger.ClearLog();
             
-            Logger.LogInfo("=== BDK Steam Hour Farm Iniciado ===");
+            Logger.LogInfo("=== Dubbox — Steam Hora Farmada iniciado ===");
             Logger.LogInfo($"Versão: {Assembly.GetExecutingAssembly().GetName().Version}");
             Logger.LogInfo($"Diretório: {Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}");
             
@@ -21,7 +21,7 @@ namespace SteamIdleManager
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
             
-            Logger.LogInfo("=== BDK Steam Hour Farm Finalizado ===");
+            Logger.LogInfo("=== Dubbox — Steam Hora Farmada finalizado ===");
         }
     }
 }

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AssemblyName>BDKSteamHourFarm</AssemblyName>
+    <AssemblyName>SteamHoraFarmada</AssemblyName>
     <RootNamespace>SteamIdleManager</RootNamespace>
     <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>

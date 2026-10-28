@@ -37,12 +37,12 @@ namespace SteamIdleManager
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BDK Steam Hour Farm";
+            Text = "Dubbox — Steam Hora Farmada";
             string icon = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logo.ico");
             if (File.Exists(icon)) Icon = new Icon(icon);
 
-            LabelAt(this, "BDK  /  STEAM TOOLS", 24, 18, 330, 20, 9, true, "accent");
-            LabelAt(this, "Steam Hour Farm", 22, 42, 430, 38, 23, true);
+            LabelAt(this, "Dubbox", 24, 18, 330, 20, 9, true, "accent");
+            LabelAt(this, "Steam Hora Farmada", 22, 42, 480, 38, 23, true);
             LabelAt(this, "Seus jogos. Seu tempo. Tudo em um só lugar.", 24, 87, 460, 22, 10, false, "muted");
             ButtonAt(this, theme, "Tema claro", 522, 24, 114, 34);
             steamStatus.SetBounds(460, 87, 176, 22);

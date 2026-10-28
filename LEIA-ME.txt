@@ -1,11 +1,16 @@
-BDK STEAM HOUR FARM — INTERFACE MODERNIZADA
-Versão local 1.2.0 | 28/10/2026 | Windows x64 / .NET Framework 4.8
+DUBBOX — STEAM HORA FARMADA
+Versão 1.2.1 | 28/10/2026 | Windows x64 / .NET Framework 4.8
 
 COMO ABRIR
-Execute BDKSteamHourFarm.exe nesta pasta. Mantenha os demais arquivos juntos.
+Execute SteamHoraFarmada.exe nesta pasta. Mantenha os demais arquivos juntos.
 Se estiver usando o ZIP, extraia a pasta inteira antes de abrir o executável.
 Abra a Steam, entre na sua conta e informe os AppIDs dos jogos.
 Use vírgulas, espaços, ponto e vírgula ou quebras de linha para separar IDs.
+
+IDENTIDADE VISUAL — 1.2.1
+Marca Dubbox e título Steam Hora Farmada.
+Ícone redesenhado em vetor, com transparência e dez tamanhos no arquivo ICO.
+As preferências da versão 1.2.0 são preservadas.
 
 O QUE MUDOU
 - Janela fixa e compacta (660 x 574 unidades lógicas), sem maximização.
@@ -47,7 +52,7 @@ steam-idle.exe, sua configuração e as duas DLLs foram preservados da pasta
 original fornecida pelo usuário. A pasta original não foi alterada.
 
 CÓDIGO-FONTE
-Entregue separadamente em BDK-Steam-Hour-Farm-Windows11-fonte.zip.
+Entregue separadamente em Steam-Hora-Farmada-v1.2.1-fonte.zip.
 Para compilar: SDK .NET e assemblies de referência do .NET Framework 4.8.
 Execute build-modern.ps1 -RuntimeDirectory 'CAMINHO_DA_PASTA_DO_APLICATIVO'.
 Execute test-modern.ps1 para rodar as verificações com o auxiliar simulado.

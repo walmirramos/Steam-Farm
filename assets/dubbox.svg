@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 256 256">
+  <title>Dubbox — Steam Hora Farmada</title>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#087ed1"/><stop offset="1" stop-color="#005aa5"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#11aaff"/><stop offset="1" stop-color="#0088df"/>
+    </linearGradient>
+    <clipPath id="tile"><rect x="10" y="10" width="236" height="236" rx="23"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect x="10" y="10" width="236" height="236" fill="url(#top)"/>
+    <path d="M10 64H246V246H10Z" fill="url(#front)"/>
+    <path d="M10 64H246" fill="none" stroke="#45bdff" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M109 92H140L107 152L140 212H109L75 152Z" fill="#fff"/>
+    <path d="M157 92L191 152L157 212L141 183L158 152L141 121Z" fill="#fff"/>
+  </g>
+</svg>

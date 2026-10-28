@@ -1,14 +1,22 @@
-# Steam Farm — Windows 11
+# Dubbox — Steam Hora Farmada
 
 Interface modernizada do BDK Steam Hour Farm, com janela compacta de tamanho fixo, sem maximização, e temas claro e escuro.
 
-## Download — v1.2.0
+## Download — v1.2.1
 
-**[Baixar o aplicativo para Windows x64](https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/BDK-Steam-Hour-Farm-Windows11-v1.2.0.zip)**
+**[Baixar o aplicativo para Windows x64](https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/Steam-Hora-Farmada-v1.2.1.zip)**
 
-Extraia a pasta inteira e execute `BDKSteamHourFarm.exe`. Mantenha o auxiliar, suas bibliotecas e os arquivos de configuração na mesma pasta.
+Extraia a pasta inteira e execute `SteamHoraFarmada.exe`. Mantenha o auxiliar, suas bibliotecas e os arquivos de configuração na mesma pasta.
 
 Requisitos: Windows x64, .NET Framework 4.8 e Steam aberta com uma conta conectada.
+
+## Identidade visual — v1.2.1
+
+Marca **Dubbox**, título **Steam Hora Farmada** e ícone redesenhado em vetor a partir da referência fornecida. O executável agora se chama `SteamHoraFarmada.exe`. As preferências existentes continuam no mesmo diretório.
+
+![Ícone Dubbox](assets/dubbox.png)
+
+O original vetorial fica em `assets/dubbox.svg`. Para regenerar o PNG e o ICO com dez tamanhos (16 a 256 px), execute `node tools/render-icon.cjs` com o pacote `sharp` disponível. O ícone é incorporado ao executável e usado pela janela.
 
 ## Novidades
 
@@ -30,7 +38,7 @@ O tempo exibido mede a sessão local. O aplicativo não consulta as horas credit
 ## Como usar
 
 1. Abra a Steam e entre na sua conta.
-2. Abra `BDKSteamHourFarm.exe`.
+2. Abra `SteamHoraFarmada.exe`.
 3. Informe os AppIDs, separados por vírgula, espaço, ponto e vírgula ou quebra de linha.
 4. Clique em **Iniciar jogos**.
 5. Selecione uma linha para usar **Parar selecionado**, ou clique em **Parar todos**.
@@ -44,11 +52,11 @@ Use um SDK .NET com suporte a projetos SDK-style e os assemblies de referência 
 Na raiz do repositório, execute:
 
 ```powershell
-Expand-Archive -LiteralPath '.\Release\BDK-Steam-Hour-Farm-Windows11-v1.2.0.zip' -DestinationPath '.\build\runtime' -Force
-.\build-modern.ps1 -RuntimeDirectory '.\build\runtime\BDK-Steam-Hour-Farm-Windows11'
+Expand-Archive -LiteralPath '.\Release\Steam-Hora-Farmada-v1.2.1.zip' -DestinationPath '.\build\runtime' -Force
+.\build-modern.ps1 -RuntimeDirectory '.\build\runtime\Steam-Hora-Farmada'
 ```
 
-O resultado fica em `Source/SteamIdleManager/bin/Release/net48/BDKSteamHourFarm.exe`.
+O resultado fica em `Source/SteamIdleManager/bin/Release/net48/SteamHoraFarmada.exe`.
 
 A interface continua usando .NET Framework 4.8. O parâmetro `RuntimeDirectory` copia o auxiliar e suas dependências para a saída. O pacote conserva os componentes auxiliares da versão original.
 
