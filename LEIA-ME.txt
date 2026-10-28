@@ -1,0 +1,54 @@
+BDK STEAM HOUR FARM — INTERFACE MODERNIZADA
+Versão local 1.2.0 | 28/10/2026 | Windows x64 / .NET Framework 4.8
+
+COMO ABRIR
+Execute BDKSteamHourFarm.exe nesta pasta. Mantenha os demais arquivos juntos.
+Se estiver usando o ZIP, extraia a pasta inteira antes de abrir o executável.
+Abra a Steam, entre na sua conta e informe os AppIDs dos jogos.
+Use vírgulas, espaços, ponto e vírgula ou quebras de linha para separar IDs.
+
+O QUE MUDOU
+- Janela fixa e compacta (660 x 574 unidades lógicas), sem maximização.
+- Temas escuro e claro, com preferência salva.
+- Configuração de escala por monitor para telas com DPI alto.
+- Lista com AppID, status e tempo local da sessão.
+- Parar todos ou apenas o jogo selecionado.
+- Início assíncrono: a janela continua respondendo durante a inicialização.
+- Parar todos também cancela jogos ainda na fila de inicialização.
+- Iniciar novamente mantém os jogos já ativos e ignora IDs repetidos.
+- Validação dos IDs antes de iniciar qualquer processo.
+- Contador de horas não volta a zero após 24 horas.
+- Encerramento restrito aos processos abertos por esta janela.
+- Fechar uma sessão ativa pede confirmação para parar seus jogos.
+- Mensagens informativas da saída stderr não são classificadas como falha.
+
+PREFERÊNCIAS E REGISTROS
+Salvos em %LOCALAPPDATA%\BDKSteamHourFarm-Modern.
+Os AppIDs antigos não são importados automaticamente; informe-os uma vez.
+O botão Ver registro abre o log no Bloco de Notas.
+O tempo mostrado mede esta sessão local, não consulta as horas creditadas pela Steam.
+O status Em execução indica que o processo auxiliar está ativo.
+
+VALIDAÇÃO
+Compilação Release: zero erros e zero avisos.
+21 verificações automatizadas aprovadas, com processos simulados:
+validação e deduplicação de IDs, tempo acima de 24h, dependências ausentes,
+início e reinício, parada individual, parada coletiva, saídas com/sem erro,
+cancelamento e preservação de outra instância de steam-idle.
+Temas claro/escuro e validação de entrada vazia conferidos na interface real.
+Não foram iniciados jogos reais nem verificado o crédito de horas na Steam.
+A escala DPI está configurada, mas não foi testada em múltiplos monitores.
+
+ORIGEM
+Projeto: https://github.com/arthurqui/BDK-Steam-Hour-Farm
+Base: b3b5a7e81fec3167a0291027700dc3f4be50c073
+Esta é uma adaptação local, não uma publicação oficial do autor.
+steam-idle.exe, sua configuração e as duas DLLs foram preservados da pasta
+original fornecida pelo usuário. A pasta original não foi alterada.
+
+CÓDIGO-FONTE
+Entregue separadamente em BDK-Steam-Hour-Farm-Windows11-fonte.zip.
+Para compilar: SDK .NET e assemblies de referência do .NET Framework 4.8.
+Execute build-modern.ps1 -RuntimeDirectory 'CAMINHO_DA_PASTA_DO_APLICATIVO'.
+Execute test-modern.ps1 para rodar as verificações com o auxiliar simulado.
+O executável simulado fica apenas na pasta Tests; não o use com a Steam.

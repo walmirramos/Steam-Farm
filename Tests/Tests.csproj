@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net48</TargetFramework><OutputType>Exe</OutputType><LangVersion>latest</LangVersion></PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Stub/**/*.cs" />
+    <Compile Include="../Source/SteamIdleManager/SessionManager.cs" Link="SessionManager.cs" />
+  </ItemGroup>
+</Project>

@@ -9,9 +9,7 @@ namespace SteamIdleManager
     public static class Logger
     {
         private static readonly object LogLock = new object();
-        private static readonly string LogPath = Path.Combine(
-            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-            "steam_idle_manager.log");
+        public static readonly string LogPath = Path.Combine(UserPreferences.DirectoryPath, "steam_idle_manager.log");
 
         public static void Log(string message)
         {
@@ -55,6 +53,9 @@ namespace SteamIdleManager
             {
                 lock (LogLock)
                 {
+                    Directory.CreateDirectory(UserPreferences.DirectoryPath);
+                    if (File.Exists(LogPath) && new FileInfo(LogPath).Length > 2 * 1024 * 1024)
+                        File.Move(LogPath, LogPath + "." + DateTime.UtcNow.Ticks + ".old");
                     File.AppendAllText(LogPath, contents, Encoding.UTF8);
                 }
             }
