@@ -1,82 +1,193 @@
-# Dubbox — Steam Hora Farmada
+<div align="center">
 
-Interface modernizada do BDK Steam Hour Farm, com janela compacta de tamanho fixo, sem maximização, e temas claro e escuro.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/hero-light.svg">
+  <img src="assets/readme/hero-light.svg" alt="Dubbox — Steam Hora Farmada. Seus jogos. Seu tempo. Tudo em um só lugar." width="1200">
+</picture>
 
-## Download — v1.2.1
+<br>
 
-**[Baixar o aplicativo para Windows x64](https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/Steam-Hora-Farmada-v1.2.1.zip)**
+**Uma janela compacta. Seus jogos organizados. Sua sessão sob controle.**
 
-Extraia a pasta inteira e execute `SteamHoraFarmada.exe`. Mantenha o auxiliar, suas bibliotecas e os arquivos de configuração na mesma pasta.
+Gerencie sessões Steam com temas claro e escuro, tempo local e controles por jogo.
 
-Requisitos: Windows x64, .NET Framework 4.8 e Steam aberta com uma conta conectada.
+<br>
 
-## Identidade visual — v1.2.1
+<a href="https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/Steam-Hora-Farmada-v1.2.1.zip"><img src="assets/readme/download.svg" alt="Baixar Steam Hora Farmada v1.2.1 para Windows x64" width="288" height="58"></a>
 
-Marca **Dubbox**, título **Steam Hora Farmada** e ícone redesenhado em vetor a partir da referência fornecida. O executável agora se chama `SteamHoraFarmada.exe`. As preferências existentes continuam no mesmo diretório.
+**v1.2.1** · Windows x64 · .NET Framework 4.8 · Pacote ZIP
 
-![Ícone Dubbox](assets/dubbox.png)
+[Primeiros passos](#-primeiros-passos) &nbsp; · &nbsp; [Recursos](#-feito-para-sua-sessão) &nbsp; · &nbsp; [Compilação](#-para-quem-desenvolve) &nbsp; · &nbsp; [Reportar problema](https://github.com/walmirramos/Steam-Farm/issues)
 
-O original vetorial fica em `assets/dubbox.svg`. Para regenerar o PNG e o ICO com dez tamanhos (16 a 256 px), execute `node tools/render-icon.cjs` com o pacote `sharp` disponível. O ícone é incorporado ao executável e usado pela janela.
+</div>
 
-## Novidades
+<br>
 
-- Janela fixa de 660 × 574 unidades lógicas, com configuração de escala por monitor.
-- Tema claro ou escuro, salvo entre sessões.
-- Lista de jogos com AppID, status e tempo local.
-- Controles para parar um jogo selecionado ou todos os jogos desta sessão.
-- Inicialização assíncrona, mantendo a janela responsiva.
-- Cancelamento dos jogos ainda na fila pelo botão **Parar todos**.
-- Validação dos AppIDs e remoção de duplicatas antes de iniciar.
-- Jogos já ativos são mantidos ao iniciar novos IDs.
-- Contador que continua após 24 horas.
-- Encerramento restrito aos processos iniciados pela própria janela.
-- Confirmação ao fechar uma sessão ativa.
-- Registros e preferências em `%LOCALAPPDATA%\BDKSteamHourFarm-Modern`.
+## ✦ Feito para sua sessão
 
-O tempo exibido mede a sessão local. O aplicativo não consulta as horas creditadas pela Steam. **Em execução** indica que o processo auxiliar continua ativo.
+| Aparência que acompanha você | Controle por jogo | Leve na interação |
+| :--- | :--- | :--- |
+| **Claro ou escuro.** Escolha seu tema; a preferência é salva para a próxima abertura. | **Uma linha por AppID.** Veja o status e o tempo local. Pare um jogo ou toda a sessão. | **Inicialização assíncrona.** A janela continua respondendo enquanto os jogos são iniciados. |
+| **Compacto por escolha.** Janela fixa de 660 × 574 unidades lógicas, sem maximização. | **Sem duplicação.** IDs repetidos são ignorados e jogos já ativos são mantidos. | **Cancelamento simples.** Parar todos também cancela os jogos que ainda estão na fila. |
 
-## Como usar
+<br>
 
-1. Abra a Steam e entre na sua conta.
-2. Abra `SteamHoraFarmada.exe`.
-3. Informe os AppIDs, separados por vírgula, espaço, ponto e vírgula ou quebra de linha.
-4. Clique em **Iniciar jogos**.
-5. Selecione uma linha para usar **Parar selecionado**, ou clique em **Parar todos**.
+## ↓ Primeiros passos
 
-As preferências da interface antiga não são importadas automaticamente. Informe seus AppIDs uma vez na nova versão.
+1. **Baixe e extraia** o [pacote v1.2.1](https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/Steam-Hora-Farmada-v1.2.1.zip) para uma pasta.
+2. **Abra a Steam** e entre na sua conta.
+3. **Execute `SteamHoraFarmada.exe`** dentro da pasta extraída.
+4. **Informe os AppIDs** e clique em **Iniciar jogos**.
 
-## Compilar a interface
+```text
+730, 440, 570
+```
 
-Use um SDK .NET com suporte a projetos SDK-style e os assemblies de referência do .NET Framework 4.8. A entrega foi compilada com o SDK .NET 10.0.403.
+Você pode separar os IDs por vírgula, espaço, ponto e vírgula ou quebra de linha. Mantenha o auxiliar, as bibliotecas e os arquivos de configuração juntos ao executável.
 
-Na raiz do repositório, execute:
+> [!NOTE]
+> O contador mostra o **tempo local desta sessão**, não as horas creditadas pela Steam. O status **Em execução** indica que o processo auxiliar está ativo.
+
+<br>
+
+## ◈ Pequenos detalhes, mais cuidado
+
+- **Tempo sem reiniciar a cada dia:** o contador continua após 24 horas.
+- **Cada sessão no seu lugar:** o encerramento afeta apenas os processos iniciados pela própria janela.
+- **Saída com confirmação:** ao fechar uma sessão ativa, o aplicativo pergunta antes de parar seus jogos.
+- **Diagnóstico acessível:** o botão **Ver registro** abre o log no Bloco de Notas.
+- **Preferências preservadas:** AppIDs e tema da versão 1.2.0 continuam disponíveis na 1.2.1.
+
+<details>
+<summary><strong>Onde ficam meus dados e preferências?</strong></summary>
+
+As preferências e os registros ficam em:
+
+```text
+%LOCALAPPDATA%\BDKSteamHourFarm-Modern
+```
+
+O nome interno da pasta foi mantido para preservar os dados da versão modernizada anterior. Os AppIDs da interface original, anterior à 1.2.0, não são importados automaticamente: informe-os uma vez.
+
+</details>
+
+<br>
+
+## ◇ Identidade Dubbox
+
+<table>
+<tr>
+<td width="140" align="center"><img src="assets/dubbox.png" width="104" height="104" alt="Ícone azul Dubbox com símbolo branco"></td>
+<td>
+<strong>Steam Hora Farmada · v1.2.1</strong><br><br>
+Marca Dubbox, título em português e ícone redesenhado do zero em vetor, com fundo transparente e dez tamanhos para Windows, de 16 a 256 px.<br><br>
+O mesmo ícone acompanha o executável e a janela.
+</td>
+</tr>
+</table>
+
+O visual desta apresentação é inspirado no Fluent Design e no WinUI 3. O aplicativo é desenvolvido em **Windows Forms com .NET Framework 4.8**.
+
+<details>
+<summary><strong>Arquivos de marca e regeneração do ícone</strong></summary>
+
+| Arquivo | Uso |
+| :--- | :--- |
+| [`assets/dubbox.svg`](assets/dubbox.svg) | Original vetorial editável |
+| [`assets/dubbox.png`](assets/dubbox.png) | PNG com transparência, 512 × 512 px |
+| [`Source/SteamIdleManager/logo.ico`](Source/SteamIdleManager/logo.ico) | Ícone do Windows com dez tamanhos |
+| [`tools/render-icon.cjs`](tools/render-icon.cjs) | Geração do PNG e do ICO a partir do SVG |
+
+Com Node.js e o pacote `sharp` disponível, execute na raiz do repositório:
+
+```shell
+node tools/render-icon.cjs
+```
+
+</details>
+
+<br>
+
+## ⌘ Para quem desenvolve
+
+<details>
+<summary><strong>Compilar a interface</strong></summary>
+
+Use um SDK .NET com suporte a projetos SDK-style e os assemblies de referência do .NET Framework 4.8. A entrega foi compilada com o **SDK .NET 10.0.403**.
+
+Na raiz do repositório:
 
 ```powershell
 Expand-Archive -LiteralPath '.\Release\Steam-Hora-Farmada-v1.2.1.zip' -DestinationPath '.\build\runtime' -Force
 .\build-modern.ps1 -RuntimeDirectory '.\build\runtime\Steam-Hora-Farmada'
 ```
 
-O resultado fica em `Source/SteamIdleManager/bin/Release/net48/SteamHoraFarmada.exe`.
+O resultado fica em:
 
-A interface continua usando .NET Framework 4.8. O parâmetro `RuntimeDirectory` copia o auxiliar e suas dependências para a saída. O pacote conserva os componentes auxiliares da versão original.
+```text
+Source/SteamIdleManager/bin/Release/net48/SteamHoraFarmada.exe
+```
 
-## Testes
+O parâmetro `RuntimeDirectory` copia o auxiliar e suas dependências para a saída. O pacote conserva os componentes auxiliares da versão original.
+
+</details>
+
+<details>
+<summary><strong>Executar os testes e conhecer a validação</strong></summary>
 
 ```powershell
 .\test-modern.ps1
 ```
 
-São 21 verificações, usando um processo auxiliar simulado, sem iniciar jogos reais: validação, deduplicação, tempo acima de 24 horas, dependências ausentes, início, reinício, parada individual/coletiva, códigos de saída, cancelamento e preservação de outras instâncias.
+São **21 verificações** com um processo auxiliar simulado, sem iniciar jogos reais:
 
-Validação desta entrega: compilação Release sem erros ou avisos, 21 verificações aprovadas e inspeção visual dos temas claro/escuro e da entrada vazia. O crédito de horas na Steam e a escala em múltiplos monitores não foram testados.
+- Validação e deduplicação de AppIDs.
+- Contador acima de 24 horas e dependências ausentes.
+- Início, reinício e parada individual ou coletiva.
+- Saídas normais e com erro.
+- Cancelamento e preservação de outras instâncias.
 
-## Estrutura e origem
+A lógica da versão 1.2.0 passou nas 21 verificações. A atualização visual 1.2.1 foi compilada sem erros ou avisos e teve seus nomes e ícone conferidos na interface real. Os temas claro/escuro e a entrada vazia também foram inspecionados durante a modernização.
 
-- `Source/SteamIdleManager`: interface modernizada.
-- `Tests`: testes e auxiliar simulado, que não deve substituir o auxiliar real.
-- `Release`: pacotes prontos para uso, incluindo as versões anteriores.
-- `steam-idle Source` e `Dependencies`: componentes originais preservados.
+O crédito de horas na Steam e a escala em múltiplos monitores não foram testados.
 
-Baseado no [BDK-Steam-Hour-Farm de arthurqui](https://github.com/arthurqui/BDK-Steam-Hour-Farm), commit `b3b5a7e81fec3167a0291027700dc3f4be50c073`. Esta versão é uma adaptação mantida neste repositório, não uma publicação oficial do autor original.
+</details>
 
-O [README original](README-original.md) foi preservado para referência e créditos. Para a versão modernizada, use `build-modern.ps1` e `test-modern.ps1`; os scripts antigos permanecem como parte do histórico do projeto.
+<details>
+<summary><strong>Explorar a estrutura do projeto</strong></summary>
+
+```text
+Steam-Farm/
+├── Source/SteamIdleManager/   Interface Windows Forms
+├── Tests/                    Testes e auxiliar simulado
+├── assets/                   Marca e imagens do README
+├── tools/                    Geração do ícone
+├── Release/                  Pacotes prontos para uso
+├── steam-idle Source/        Código do auxiliar original
+├── Dependencies/             Bibliotecas originais
+├── build-modern.ps1          Compilação da interface
+└── test-modern.ps1           Execução das verificações
+```
+
+O auxiliar simulado de `Tests` serve exclusivamente aos testes; não deve substituir o auxiliar real. Os scripts antigos permanecem no repositório como referência. Para a versão atual, use `build-modern.ps1` e `test-modern.ps1`.
+
+</details>
+
+<br>
+
+---
+
+<div align="center">
+
+<img src="assets/dubbox.png" width="32" height="32" alt="Dubbox">
+
+**Dubbox · Steam Hora Farmada**
+
+Baseado no [BDK-Steam-Hour-Farm de arthurqui](https://github.com/arthurqui/BDK-Steam-Hour-Farm).<br>
+Adaptação mantida neste repositório, com créditos e documentação histórica no [README original](README-original.md).<br>
+Base da modernização: [`b3b5a7e`](https://github.com/arthurqui/BDK-Steam-Hour-Farm/commit/b3b5a7e81fec3167a0291027700dc3f4be50c073).
+
+[Download](https://github.com/walmirramos/Steam-Farm/raw/refs/heads/main/Release/Steam-Hora-Farmada-v1.2.1.zip) &nbsp; · &nbsp; [Código-fonte](Source/SteamIdleManager) &nbsp; · &nbsp; [Problemas e sugestões](https://github.com/walmirramos/Steam-Farm/issues)
+
+</div>

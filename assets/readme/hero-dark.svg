@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370">
+  <title>Dubbox — Steam Hora Farmada</title><desc>Aplicativo compacto para gerenciar sessões Steam. Temas claro e escuro, controle por jogo e versão 1.2.1.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101722"/><stop offset="1" stop-color="#182536"/></linearGradient><radialGradient id="glow"><stop stop-color="#126dbe" stop-opacity=".5"/><stop offset="1" stop-color="#126dbe" stop-opacity="0"/></radialGradient><linearGradient id="blue" x2="0" y2="1"><stop stop-color="#11aaff"/><stop offset="1" stop-color="#0088df"/></linearGradient><clipPath id="icon"><rect width="148" height="148" rx="24"/></clipPath></defs>
+  <rect x="1" y="1" width="1198" height="368" rx="26" fill="url(#bg)" stroke="#31465f"/>
+  <ellipse cx="1080" cy="50" rx="420" ry="350" fill="url(#glow)"/>
+  <path d="M914 1L1199 286M1000 1L1199 200M1086 1L1199 114" stroke="#31465f" stroke-opacity=".5"/>
+  <g transform="translate(64 77)"><rect x="-9" y="-9" width="166" height="166" rx="31" fill="#182536" stroke="#31465f"/><g clip-path="url(#icon)"><rect width="148" height="148" fill="#0676c5"/><path d="M0 34H148V148H0Z" fill="url(#blue)"/><path d="M0 34H148" stroke="#58c5ff" stroke-opacity=".5"/><g transform="translate(-6.27 -6.27) scale(.627)"><path d="M109 92H140L107 152L140 212H109L75 152Z M157 92L191 152L157 212L141 183L158 152L141 121Z" fill="white"/></g></g></g>
+  <g font-family="Segoe UI,Arial,sans-serif"><text x="254" y="91" fill="#75c9ff" font-size="18" font-weight="700" letter-spacing="5">DUBBOX</text>
+  <text x="250" y="158" fill="#f3f7ff" font-size="55" font-weight="700" letter-spacing="-1.5">Steam Hora Farmada</text>
+  <text x="254" y="201" fill="#b3c3d8" font-size="22">Seus jogos. Seu tempo. Tudo em um só lugar.</text>
+  <rect x="254" y="233" width="152" height="34" rx="17" fill="#1e3044" stroke="#31465f"/><text x="330" y="255" text-anchor="middle" fill="#f3f7ff" font-size="14">Windows · x64</text>
+  <rect x="417" y="233" width="168" height="34" rx="17" fill="#1e3044" stroke="#31465f"/><text x="501" y="255" text-anchor="middle" fill="#f3f7ff" font-size="14">Claro + escuro</text>
+  <rect x="596" y="233" width="147" height="34" rx="17" fill="#1e3044" stroke="#31465f"/><text x="669" y="255" text-anchor="middle" fill="#f3f7ff" font-size="14">Versão 1.2.1</text>
+  <path d="M64 308H1136" stroke="#31465f"/>
+  <text x="64" y="338" fill="#b3c3d8" font-size="14">COMPACTO POR FORA. CONTROLE COMPLETO DA SUA SESSÃO.</text>
+  <text x="1136" y="338" text-anchor="end" fill="#75c9ff" font-size="14">github.com/walmirramos/Steam-Farm</text></g>
+  </svg>
